@@ -16,3 +16,16 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  sadness_1:
+    runs-on: windows-2025
+    steps:
+      - run: echo SAD1a
+      - run: echo SAD1b
+      - run: echo SAD1c
+  sadness_2:
+    runs-on: windows-2025
+    steps:
+      - run: echo SAD2a
+      - run: echo SAD2b
+      - run: echo SAD2c
+
