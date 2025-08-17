@@ -40,6 +40,7 @@ jobs:
         uses: lukka/run-vcpkg@v11
         with:
           vcpkgJsonGlob: 'vcpkg.json'
+          vcpkgGitCommitId: 4bb07a326d9b9bce3703272a509e5bc25dd9cfd5
 
       # Note: if the preset misses the "configuration", it is possible to explicitly select the
       # configuration with the additional `--config` flag, e.g.:
