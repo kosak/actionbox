@@ -5,4 +5,4 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     steps:
-      - echo sad you were confused bye
+      - run: echo sad you were confused bye
