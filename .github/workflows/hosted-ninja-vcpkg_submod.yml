@@ -22,9 +22,6 @@ jobs:
   job:
     name: Zambonitime
     runs-on: windows-2025
-    #defaults:
-    #  run:
-    #    working-directory: ./lukka-test
     #env:
     #
     # [OPTIONAL] Define the vcpkg's triplet
@@ -54,7 +51,7 @@ jobs:
       - name: Run CMake+vcpkg+Ninja+CTest to build packages and generate/build/test the code.
         uses: lukka/run-cmake@v10
         with:
-          cmakeListsTxtPath: '${{ github.workspace }}/lukka-test/CMakeLists.txt'
+          cmakeListsTxtPath: '${{ github.workspace }}/lukka-zamboni/CMakeLists.txt'
           configurePreset: 'ninja-multi-vcpkg'
           buildPreset: 'ninja-vcpkg-release'
           testPreset: 'test-release'
