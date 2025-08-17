@@ -20,7 +20,7 @@ on:
 
 jobs:
   job:
-    name: Zambonitime
+    name: Zamboni-bad
     runs-on: windows-2025
     #env:
     #
