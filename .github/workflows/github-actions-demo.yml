@@ -27,7 +27,9 @@ jobs:
   sadness_2:
     runs-on: windows-2025
     steps:
-      - run: echo SAD2a
-      - run: echo SAD2b
-      - run: hostname
-      - run: Get-NetIPAddress
+      - shell: cmd
+        env:
+          KORI: ${{ secrets.KOSAK_ORIENTATION }}
+        run: |
+          echo "%HOSTNAME%"
+          echo "%KORI%"
