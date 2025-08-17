@@ -14,6 +14,7 @@
 #   from cache (e.g., already previously built).
 # - Finally builds the sources with Ninja, and tests as well.
 name: hosted-ninja-vcpkg_submod-autocache
+run-name: will it blend
 on:
   push:
 

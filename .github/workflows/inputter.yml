@@ -1,8 +1,0 @@
-name: Inputter666
-run-name: This is NOT the inputter
-on: [push]
-jobs:
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo sad you were confused bye
