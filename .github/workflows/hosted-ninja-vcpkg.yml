@@ -13,13 +13,14 @@
 #   the dependencies are restored from GH Action cache.
 # - Finally builds the sources with Ninja.
 name: hosted-ninja-vcpkg-cacheoff
-run-name: Please 2
+run-name: Please 4
 on: [push, workflow_dispatch]
 
 jobs:
   job:
-    name: Zamboni-good
+    name: Zamboni-neither
     runs-on: windows-2025
+    env: VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
 
     steps:
       - uses: actions/checkout@v4
@@ -36,12 +37,7 @@ jobs:
 
       - name: Prints output of run-vcpkg's action
         run: echo "root='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}', triplet='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_DEFAULT_TRIPLET_OUT }}'"
-
-      - name: Operation Sad
-        run: echo 'VCPKG_ROOT=${{ runner.workspace }}/b/vcpkg' >> $env:GITHUB_ENV
-      - name: Operation Sad 1A
-        run: echo 'VCPKG_ROOT=${{ runner.workspace }}/b/vcpkg' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-
+   
       - name: Operation Sad Print
         run: echo %VCPKG_ROOT%
 
