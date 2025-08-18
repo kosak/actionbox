@@ -18,18 +18,12 @@ on: [push, workflow_dispatch]
 jobs:
   job:
     name: Zamboni-good
+    run-name: Please 1
     runs-on: windows-2025
 
     steps:
       - uses: actions/checkout@v4
       - uses: lukka/get-cmake@latest
-      - name: Dump the content of $RUNNER_TEMP
-        run: find $RUNNER_TEMP
-        shell: bash
-      - name: Dump the content of $RUNNER_WORKSPACE
-        run: find $RUNNER_WORKSPACE
-        shell: bash
-
       - name: Setup vcpkg
         uses: lukka/run-vcpkg@v11
         id: runvcpkg
@@ -43,11 +37,15 @@ jobs:
       - name: Prints output of run-vcpkg's action
         run: echo "root='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}', triplet='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_DEFAULT_TRIPLET_OUT }}'"
 
+      - name: Operation Sad
+        run: echo 'VCPKG_ROOT=${{ runner.workspace }}/b/vcpkg' >> %GITHUB_ENV%
+
+      - name: Operation Sad Print
+        run: echo %VCPKG_ROOT%
+
       - name: Run CMake with vcpkg.json manifest
         uses: lukka/run-cmake@v10
         with:
           cmakeListsTxtPath: '${{ github.workspace }}/lukka-test/CMakeLists.txt'
           configurePreset: ninja-multi-vcpkg
           buildPreset: ninja-multi-vcpkg
-        env:
-          VCPKG_ROOT: '${{ runner.workspace }}/b/vcpkg'
