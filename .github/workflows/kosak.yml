@@ -1,5 +1,5 @@
 name: kosak-build
-run-name: Try to do the cmake config, v2
+run-name: Probably can't bootstrap now?
 on: [push, workflow_dispatch]
 
 jobs:
@@ -15,7 +15,6 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: microsoft/vcpkg
-          path: vcpkg
 
       # Install vcpkg
       - shell: cmd
