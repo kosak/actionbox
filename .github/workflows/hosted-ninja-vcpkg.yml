@@ -20,8 +20,6 @@ jobs:
   job:
     name: Zamboni-neither
     runs-on: windows-2025
-    env:
-      VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
 
     steps:
       - uses: actions/checkout@v4
@@ -41,8 +39,12 @@ jobs:
    
       - name: Operation Sad Print
         run: echo %VCPKG_ROOT%
+        env:
+          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
 
       - name: Run CMake with vcpkg.json manifest
+        env:
+          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
         uses: lukka/run-cmake@v10
         with:
           cmakeListsTxtPath: '${{ github.workspace }}/lukka-test/CMakeLists.txt'
