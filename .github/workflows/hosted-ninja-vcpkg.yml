@@ -37,8 +37,8 @@ jobs:
       - name: Prints output of run-vcpkg's action
         run: echo "root='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}', triplet='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_DEFAULT_TRIPLET_OUT }}'"
    
-      - name: Operation Sad Print
-        run: echo %VCPKG_ROOT%
+      - name: Operation Happy Print
+        run: echo $env:VCPKG_ROOT
         env:
           VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
 
