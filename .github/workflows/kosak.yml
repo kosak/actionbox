@@ -1,0 +1,15 @@
+name: kosak-build
+run-name: IT IS KOSAK TIME
+on: [push, workflow_dispatch]
+
+jobs:
+  job:
+    name: Build prog1
+    runs-on: windows-2025
+
+    steps:
+      # Check out vcpkg
+      - uses: actions/checkout@v5
+        repository: microsoft/vcpkg
+      # Check out my repo
+      - uses: actions/checkout@v5
