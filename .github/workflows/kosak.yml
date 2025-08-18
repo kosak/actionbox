@@ -1,5 +1,5 @@
 name: kosak-build
-run-name: Probably can't bootstrap now?
+run-name: Probably cannot bootstrap now v3
 on: [push, workflow_dispatch]
 
 jobs:
@@ -15,11 +15,12 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: microsoft/vcpkg
+          path: vcpkg
 
       # Install vcpkg
       - shell: cmd
-        run: vcpkg/bootstrap-vcpkg.bat
+        run: ./vcpkg/bootstrap-vcpkg.bat
 
       # Run cmake
       - shell: cmd
-        run: cmake -S cpp/prog1 -B cpp/prog1/build --toolchain ${{ runner.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
+        run: cmake -S cpp/prog1 -B cpp/prog1/build --toolchain ${{ runner.workspace }}/actionbox/vcpkg/scripts/buildsystems/vcpkg.cmake
