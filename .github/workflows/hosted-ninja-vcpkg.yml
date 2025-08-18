@@ -46,12 +46,12 @@ jobs:
       - name: Operation Sad Print 2
         run: echo $env:VCPKG_ROOT
         env:
-          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
+          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg
 
       - name: Operation Sad Print 3
         run: echo $VCPKG_ROOT
         env:
-          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
+          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg
 
       - name: Run CMake with vcpkg.json manifest
         uses: lukka/run-cmake@v10
@@ -59,3 +59,5 @@ jobs:
           cmakeListsTxtPath: '${{ github.workspace }}/lukka-test/CMakeLists.txt'
           configurePreset: ninja-multi-vcpkg
           buildPreset: ninja-multi-vcpkg
+        env:
+          DCMAKE_TOOLCHAIN_FILE: ${{ runner.workspace }}/b/vcpkg/scripts/buildsystems/vcpkg.cmake
