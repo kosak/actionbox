@@ -1,6 +1,7 @@
-﻿#include "prog1.h"
+﻿#include "fmt/format.h"
 
-int main() {
-	std::cout << "Hello World!\n";
+int main()
+{
+	fmt::println("Hello there {}\n", 12);
 	return 0;
 }

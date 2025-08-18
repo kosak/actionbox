@@ -57,14 +57,5 @@
                 "CMAKE_BUILD_TYPE": "Release"
             }
         }
-    ],
-    "buildPresets": [
-        {
-            "name": "x64-release",
-            "configurePreset": "x64-release",
-            "displayName": "hate 1",
-            "description": "hate 12",
-            "configuration": "Release"
-        }
     ]
 }
