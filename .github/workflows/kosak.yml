@@ -10,6 +10,7 @@ jobs:
     steps:
       # Check out vcpkg
       - uses: actions/checkout@v5
-        repository: microsoft/vcpkg
+        with:
+          repository: microsoft/vcpkg
       # Check out my repo
       - uses: actions/checkout@v5
