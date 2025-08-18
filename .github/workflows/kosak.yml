@@ -20,3 +20,7 @@ jobs:
       # Install vcpkg
       - shell: cmd
         run: vcpkg/bootstrap-vcpkg.bat
+
+      # Run cmake
+      - shell: cmd
+        run: cmake --version
