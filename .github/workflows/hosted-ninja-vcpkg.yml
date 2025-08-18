@@ -42,6 +42,16 @@ jobs:
         env:
           VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
 
+      - name: Operation Sad Print 2
+        run: echo $env:VCPKG_ROOT
+        env:
+          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
+
+      - name: Operation Sad Print 3
+        run: echo $VCPKG_ROOT
+        env:
+          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
+
       - name: Run CMake with vcpkg.json manifest
         env:
           VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
