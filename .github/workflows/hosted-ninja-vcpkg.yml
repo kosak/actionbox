@@ -40,6 +40,9 @@ jobs:
       - name: Operation Actually Happy Print
         run: echo $env:VCPKG_ROOT
 
+      - name: What is inside - NOTHING
+        run: ls $env:VCPKG_ROOT
+
       - name: Operation Sad Print 2
         run: echo $env:VCPKG_ROOT
         env:
