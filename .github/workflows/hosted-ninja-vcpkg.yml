@@ -54,5 +54,5 @@ jobs:
           configurePreset: x64-release
           buildPreset: x64-release
           cmakeListsTxtPath: '${{ github.workspace }}/cpp/prog1/CMakeLists.txt'
-        # env:
-        #  CMAKE_TOOLCHAIN_FILE: ${{ runner.workspace }}/b/vcpkg/scripts/buildsystems/vcpkg.cmake
+        env:
+         CMAKE_TOOLCHAIN_FILE: ${{ runner.workspace }}/b/vcpkg/scripts/buildsystems/vcpkg.cmake
