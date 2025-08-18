@@ -11,8 +11,11 @@ endif()
 
 project ("prog1")
 
+find_package(fmt CONFIG REQUIRED)
+
 # Add source to this project's executable.
 add_executable (prog1 "prog1.cc" "prog1.h")
+target_link_libraries(prog1 PRIVATE fmt::fmt)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET prog1 PROPERTY CXX_STANDARD 20)
