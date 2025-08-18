@@ -8,9 +8,15 @@ jobs:
     runs-on: windows-2025
 
     steps:
+      # Check out my repo
+      - uses: actions/checkout@v5
+
       # Check out vcpkg
       - uses: actions/checkout@v5
         with:
           repository: microsoft/vcpkg
-      # Check out my repo
-      - uses: actions/checkout@v5
+          path: vcpkg
+
+      # Install vcpkg
+      - shell: cmd
+        run: vcpkg/bootstrap-vcpkg.bat
