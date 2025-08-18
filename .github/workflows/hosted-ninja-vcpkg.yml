@@ -20,7 +20,8 @@ jobs:
   job:
     name: Zamboni-neither
     runs-on: windows-2025
-    env: VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
+    env:
+      VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
 
     steps:
       - uses: actions/checkout@v4
