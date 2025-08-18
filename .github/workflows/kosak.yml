@@ -1,5 +1,5 @@
 name: kosak-build
-run-name: IT IS KOSAK TIME
+run-name: Try to do the cmake config
 on: [push, workflow_dispatch]
 
 jobs:
