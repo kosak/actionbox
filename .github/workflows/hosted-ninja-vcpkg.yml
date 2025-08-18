@@ -51,8 +51,6 @@ jobs:
       - name: Run CMake with vcpkg.json manifest
         uses: lukka/run-cmake@v10
         with:
-          cmakeListsTxtPath: '${{ github.workspace }}/lukka-test/CMakeLists.txt'
-          configurePreset: ninja-multi-vcpkg
-          buildPreset: ninja-multi-vcpkg
-        env:
-          CMAKE_TOOLCHAIN_FILE: ${{ runner.workspace }}/b/vcpkg/scripts/buildsystems/vcpkg.cmake
+          cmakeListsTxtPath: '${{ github.workspace }}/cpp/prog1/CMakeLists.txt'
+        # env:
+        #  CMAKE_TOOLCHAIN_FILE: ${{ runner.workspace }}/b/vcpkg/scripts/buildsystems/vcpkg.cmake
