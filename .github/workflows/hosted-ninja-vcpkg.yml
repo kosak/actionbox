@@ -54,8 +54,6 @@ jobs:
           VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
 
       - name: Run CMake with vcpkg.json manifest
-        env:
-          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
         uses: lukka/run-cmake@v10
         with:
           cmakeListsTxtPath: '${{ github.workspace }}/lukka-test/CMakeLists.txt'
