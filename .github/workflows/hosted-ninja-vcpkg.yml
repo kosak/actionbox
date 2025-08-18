@@ -18,7 +18,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   job:
-    name: Zamboni-neither
+    name: Zamboni-tpnn
     runs-on: windows-2025
 
     steps:
@@ -37,10 +37,8 @@ jobs:
       - name: Prints output of run-vcpkg's action
         run: echo "root='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_ROOT_OUT }}', triplet='${{ steps.runvcpkg.outputs.RUNVCPKG_VCPKG_DEFAULT_TRIPLET_OUT }}'"
    
-      - name: Operation Happy Print
+      - name: Operation Actually Happy Print
         run: echo $env:VCPKG_ROOT
-        env:
-          VCPKG_ROOT: ${{ runner.workspace }}/b/vcpkg'
 
       - name: Operation Sad Print 2
         run: echo $env:VCPKG_ROOT
