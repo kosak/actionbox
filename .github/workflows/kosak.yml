@@ -24,3 +24,7 @@ jobs:
       # Run cmake
       - shell: cmd
         run: cmake -S cpp/prog1 -B cpp/prog1/build --toolchain ${{ runner.workspace }}/actionbox/vcpkg/scripts/buildsystems/vcpkg.cmake
+
+      # echo sad
+      - run echo ${{ github.workspace }}
+      - run echo ${{ runner.workspace }}
