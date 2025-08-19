@@ -22,7 +22,7 @@ jobs:
           path: vcpkg
 
       - name: Bootstrap
-      - shell: cmd
+        shell: cmd
         run: ./vcpkg/bootstrap-vcpkg.bat
 
       - name: Configure vcpkg for GitHub Actions Cache
@@ -31,7 +31,7 @@ jobs:
           echo "VCPKG_BINARY_SOURCES=clear;github" >> $GITHUB_ENV
 
       - name: Run cmake configuration
-      - shell: cmd
+        shell: cmd
         run: cmake -S cpp/prog1 -B cpp/prog1/build --toolchain ${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
 
       # Run cmake build
