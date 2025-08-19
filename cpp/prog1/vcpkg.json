@@ -2,6 +2,7 @@
   "dependencies": [
     "fmt",
     "immer",
-    "zlib"
+    "zlib",
+    "protobuf"
   ]
 }
