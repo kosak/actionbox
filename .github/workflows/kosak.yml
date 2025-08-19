@@ -14,15 +14,11 @@ jobs:
     runs-on: windows-2025
 
     steps:
-      # echo sad
-      - run: echo ${{ github.workspace }}
-      - run: echo ${{ runner.workspace }}
+      - name: Check out this repo
+        uses: actions/checkout@v5
 
-      # Check out my repo
-      - uses: actions/checkout@v5
-
-      # Check out vcpkg
-      - uses: actions/checkout@v5
+      - name: Check out vcpkg
+        uses: actions/checkout@v5
         with:
           repository: microsoft/vcpkg
           path: vcpkg
@@ -49,6 +45,6 @@ jobs:
         shell: cmd
         run: cmake -S cpp/prog1 -B cpp/prog1/build --toolchain ${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
 
-      # Run cmake build
-      - shell: cmd
+      - name: Run cmake build
+        shell: cmd
         run: cmake --build cpp/prog1/build --config RelWithDebInfo
