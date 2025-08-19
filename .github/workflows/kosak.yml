@@ -1,5 +1,5 @@
 name: kosak-build
-run-name: After adding protobuf, first build should be slow
+run-name: OK caching worked. That was 'impressive'
 on: [push, workflow_dispatch]
 
 env:
