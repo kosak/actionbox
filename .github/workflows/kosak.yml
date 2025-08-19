@@ -31,9 +31,6 @@ jobs:
         shell: cmd
         run: ./vcpkg/bootstrap-vcpkg.bat
 
-      - name: Operation sad
-        run: dir ${{ env.VCPKG_EXE }}
-        
       - name: Add Github NuGet sources
         shell: pwsh
         run: |
