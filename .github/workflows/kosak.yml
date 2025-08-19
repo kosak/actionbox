@@ -1,5 +1,5 @@
 name: kosak-build
-run-name: Probably cannot bootstrap now v3
+run-name: maybe it actually builds
 on: [push, workflow_dispatch]
 
 jobs:
@@ -8,6 +8,10 @@ jobs:
     runs-on: windows-2025
 
     steps:
+      # echo sad
+      - run: echo ${{ github.workspace }}
+      - run: echo ${{ runner.workspace }}
+
       # Check out my repo
       - uses: actions/checkout@v5
 
@@ -21,10 +25,10 @@ jobs:
       - shell: cmd
         run: ./vcpkg/bootstrap-vcpkg.bat
 
-      # Run cmake
+      # Run cmake configuration
       - shell: cmd
-        run: cmake -S cpp/prog1 -B cpp/prog1/build --toolchain ${{ runner.workspace }}/actionbox/vcpkg/scripts/buildsystems/vcpkg.cmake
+        run: cmake -S cpp/prog1 -B cpp/prog1/build --toolchain ${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
 
-      # echo sad
-      - run: echo ${{ github.workspace }}
-      - run: echo ${{ runner.workspace }}
+      # Run cmake build
+      - shell: cmd
+        run: cmake --build cpp/prog1/build --config RelWithDebInfo
