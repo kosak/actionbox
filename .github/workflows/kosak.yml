@@ -1,5 +1,5 @@
 name: kosak-build
-run-name: maybe it actually builds
+run-name: first stab at builtin caching
 on: [push, workflow_dispatch]
 
 jobs:
@@ -21,11 +21,16 @@ jobs:
           repository: microsoft/vcpkg
           path: vcpkg
 
-      # Install vcpkg
+      - name: Bootstrap
       - shell: cmd
         run: ./vcpkg/bootstrap-vcpkg.bat
 
-      # Run cmake configuration
+      - name: Configure vcpkg for GitHub Actions Cache
+        shell: bash
+        run: |
+          echo "VCPKG_BINARY_SOURCES=clear;github" >> $GITHUB_ENV
+
+      - name: Run cmake configuration
       - shell: cmd
         run: cmake -S cpp/prog1 -B cpp/prog1/build --toolchain ${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake
 
