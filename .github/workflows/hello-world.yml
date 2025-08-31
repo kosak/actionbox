@@ -8,22 +8,28 @@ jobs:
     runs-on: windows-2025
 
     steps:
-      - name: echo Hello, world!
+      - name: print stuff
         shell: cmd
-        run: echo Hello, World!
+        run: |
+          echo Hello, World!
+          systeminfo
 
   linux_job:
     name: Hello, world! on Linux
     runs-on: ubuntu-24.04
 
     steps:
-      - name: echo Hello, world!
-        run: echo Hello, World!
+      - name: print stuff
+        run: |
+          echo Hello, World!
+          lsb_release -a
 
   macos_job:
     name: Hello, world! on MacOS
     runs-on: macos-15
 
     steps:
-      - name: echo Hello, world!
-        run: echo Hello, World!
+      - name: print stuff
+        run: |
+          echo Hello, World!
+          sw_vers -productVersion
