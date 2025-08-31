@@ -1,0 +1,29 @@
+name: hello world
+run-name: Run "Hello, World" on multiple platforms
+on: [push, workflow_dispatch]
+
+jobs:
+  win_job:
+    name: Hello, world! on Windows
+    runs-on: windows-2025
+
+    steps:
+      - name: echo Hello, world!
+        shell: cmd
+        run: echo Hello, World!
+
+  linux_job:
+    name: Hello, world! on Linux
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: echo Hello, world!
+        run: echo Hello, World!
+
+  macos_job:
+    name: Hello, world! on MacOS
+    runs-on: macos-15
+
+    steps:
+      - name: echo Hello, world!
+        run: echo Hello, World!
